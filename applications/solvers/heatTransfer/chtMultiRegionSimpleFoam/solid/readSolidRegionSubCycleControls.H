@@ -1,5 +1,4 @@
-    fvMesh& mesh = solidRegions[i];
     const dictionary& SolidRegionSubCycleControl = mesh.solutionDict().subDict("SolidRegionSubCycleControl");
 
-    int maxDeltaTForSolidRegion =
+    int nTSubCycles =
         SolidRegionSubCycleControl.lookupOrDefault<int>("nTSubCycles", 0);
