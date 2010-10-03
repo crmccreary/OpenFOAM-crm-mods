@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
         {
             Info<< "\nSolving for solid region "
                 << solidRegions[i].name() << endl;
-            #include "setRegionSolidFields.H"
+            fvMesh& mesh = solidRegions[i];
             #include "readSolidRegionSubCycleControls.H"
             #include "readSolidMultiRegionSIMPLEControls.H"
             #include "initConvergenceCheck.H"
