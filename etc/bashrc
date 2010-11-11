@@ -71,7 +71,7 @@ export WM_PROJECT_USER_DIR=$HOME/$WM_PROJECT/$USER-$WM_PROJECT_VERSION
 
 # Location of third-party software
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export WM_THIRD_PARTY_DIR=$WM_PROJECT_INST_DIR/ThirdParty-$WM_PROJECT_VERSION
+export WM_THIRD_PARTY_DIR=$WM_PROJECT_INST_DIR/ThirdParty-1.7.1
 
 
 # Source files, possibly with some verbosity
@@ -129,7 +129,7 @@ unset WM_COMPILER_ARCH WM_COMPILER_LIB_ARCH
 : ${WM_PRECISION_OPTION:=DP}; export WM_PRECISION_OPTION
 
 # WM_COMPILE_OPTION = Opt | Debug | Prof
-: ${WM_COMPILE_OPTION:=Opt}; export WM_COMPILE_OPTION
+: ${WM_COMPILE_OPTION:=Debug}; export WM_COMPILE_OPTION
 
 # WM_MPLIB = SYSTEMOPENMPI | OPENMPI | MPICH | MPICH-GM | HPMPI | MPI | QSMPI
 : ${WM_MPLIB:=OPENMPI}; export WM_MPLIB

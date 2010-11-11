@@ -35,6 +35,7 @@ Description
 #include "fixedGradientFvPatchFields.H"
 #include "regionProperties.H"
 #include "compressibleCourantNo.H"
+#include "subCycle.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -73,10 +74,11 @@ int main(int argc, char *argv[])
         {
             Info<< "\nSolving for solid region "
                 << solidRegions[i].name() << endl;
-            #include "setRegionSolidFields.H"
+            fvMesh& mesh = solidRegions[i];
+            #include "readSolidRegionSubCycleControls.H"
             #include "readSolidMultiRegionSIMPLEControls.H"
             #include "initConvergenceCheck.H"
-            #include "solveSolid.H"
+            #include "TEqnsSubCycle.H"
             #include "convergenceCheck.H"
         }
 
