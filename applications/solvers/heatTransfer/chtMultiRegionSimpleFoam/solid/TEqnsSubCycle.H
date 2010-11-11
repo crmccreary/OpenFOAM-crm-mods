@@ -1,3 +1,4 @@
+#include "setRegionSolidFields.H"
 if (nTSubCycles > 1)
 {
     for
@@ -6,14 +7,12 @@ if (nTSubCycles > 1)
         !(++TSubCycle).end();
     )
     {
-#       include "setRegionSolidFields.H"
 #       include "solveSolid.H"
         runTime++;
     }
 }
 else
 {
-#       include "setRegionSolidFields.H"
 #       include "solveSolid.H"
 }
 
