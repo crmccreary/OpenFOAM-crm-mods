@@ -105,13 +105,13 @@ unset MPFR_ARCH_PATH
 # Select compiler installation
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # compilerInstall = OpenFOAM | system
-: ${compilerInstall:=system}
+: ${compilerInstall:=OpenFOAM}
 
 case "${compilerInstall:-OpenFOAM}" in
 OpenFOAM)
     case "$WM_COMPILER" in
     Gcc)
-        gcc_version=gcc-4.4.3
+        gcc_version=gcc-4.4.4
         gmp_version=gmp-5.0.1
         mpfr_version=mpfr-2.4.2
         ;;
@@ -122,7 +122,7 @@ OpenFOAM)
         mpc_version=mpc-0.8.1
         ;;
     Gcc44)
-        gcc_version=gcc-4.4.3
+        gcc_version=gcc-4.4.4
         gmp_version=gmp-5.0.1
         mpfr_version=mpfr-2.4.2
         ;;

@@ -139,6 +139,22 @@ void Foam::solidWallHeatFluxTemperatureFvPatchScalarField::updateCoeffs()
     gradient() = q_/Kw;
 
     fixedGradientFvPatchScalarField::updateCoeffs();
+
+    if (debug)
+    {
+        scalar Q = gSum(Kw*patch().magSf()*snGrad());
+
+        Info<< patch().boundaryMesh().mesh().name() << ':'
+            << patch().name() << ':'
+            << this->dimensionedInternalField().name() << " :"
+            << " heatFlux:" << Q
+            << " walltemperature "
+            << " min:" << gMin(*this)
+            << " max:" << gMax(*this)
+            << " avg:" << gAverage(*this)
+            << endl;
+    }
+
 }
 
 
